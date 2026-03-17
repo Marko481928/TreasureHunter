@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\frost\\OneDrive - Atlantic TU\\C\u002B\u002Bprogramming\\Treasure Hunter\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{46B6A81F-56B0-41DF-8835-352DD9957B36}|Treasure Hunter\\Treasure Hunter.vcxproj|C:\\Users\\frost\\OneDrive - Atlantic TU\\C\u002B\u002Bprogramming\\Treasure Hunter\\Treasure Hunter\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{46B6A81F-56B0-41DF-8835-352DD9957B36}|Treasure Hunter\\Treasure Hunter.vcxproj|solutionrelative:Treasure Hunter\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\frost\\OneDrive - Atlantic TU\\C\u002B\u002Bprogramming\\Treasure Hunter\\Treasure Hunter\\main.cpp",
+              "RelativeDocumentMoniker": "Treasure Hunter\\main.cpp",
+              "ToolTip": "C:\\Users\\frost\\OneDrive - Atlantic TU\\C\u002B\u002Bprogramming\\Treasure Hunter\\Treasure Hunter\\main.cpp",
+              "RelativeToolTip": "Treasure Hunter\\main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-14T09:41:12.332Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

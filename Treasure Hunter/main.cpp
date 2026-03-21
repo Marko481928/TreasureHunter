@@ -4,33 +4,41 @@
 
 int main()
 {
-	int gold = 1;
-	int* pRow, * pColumn;
+	
+	int gold = 1, i = 0, j = 0;
 	const int row = 6, col = 6;
 	srand((int)time(0));
 	int field[row][col];
+	int score = 0;
 
 	//Each box getting its values
-	for (int i = 0; i < row; i++)
+	for (i = 0; i < row; i++)
 	{
-		for (int j = 0; j < col; j++)
+		for (j = 0; j < col; j++)
 		{
 			field[i][j] = (rand() % 255) + 1;
-			printf("%d\n", field[i][j]);
+			printf("%d\t", field[i][j]); 
 		}
+		printf("\n");
 	}
 
-	//Checking the bits
-	for (int i = 0; i <= 1; i++)
+	for (i = 0; i < row; i++)
 	{
-		printf("Enter the position on the grid: ");
-		int* p = &field[i][i];
-		scanf_s("%d %d", field[i][i]);
-		printf("Your number is: %d", field[i][i]);
-	
+		for (j = 0; j < col; j++)
+		{
+			if (field[i][j] & gold)
+			{
+				score += field[i][j] >> 4;
+				printf("%d is gold! \t The score is: %d\t\n", field[i][j], score);
+			}
+			else
+			{
+				printf("%d is a trap!\t", field[i][j]);
+			}
+		}
+		printf("\n");
 	}
-
-
+	//Checking the bits
 
 	return 0;
 }

@@ -15,6 +15,8 @@ int main()
 
 	//Each box getting its values
 	randomize(&i, &j, field);
+	printf("Enter your box postion through \" \": ");
+	scanf_s("%d %d", &i, &j);
 	mvmnt(&i, &j, field, gold, score);
 	return 0;
 }
@@ -40,9 +42,6 @@ void mvmnt(int* pRow, int* pCol, int grid[ROW][COL], int gold, int score)
 {
 	int Rows = *pRow;
 	int Columns = *pCol;
-	printf("Enter your box postion through \" \": ");
-	scanf_s("%d %d", &Rows, &Columns);
-
 			if (grid[Rows][Columns] & gold)
 			{
 				score += grid[Rows][Columns] >> 4;

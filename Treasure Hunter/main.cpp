@@ -2,43 +2,54 @@
 #include<stdlib.h>
 #include<time.h>
 
+const int ROW = 7, COL = 7;
+void randomize(int* pRow, int* pCol, int grid[ROW][COL]);
+void mvmnt(int *pRow, int *pCol, int grid[ROW][COL], int gold, int score);
+
 int main()
-{
-	
-	int gold = 1, i = 0, j = 0;
-	const int row = 6, col = 6;
+{	
+	int gold = 1, i = 1, j = 1;
 	srand((int)time(0));
-	int field[row][col];
+	int field[ROW][COL];
 	int score = 0;
 
 	//Each box getting its values
-	for (i = 0; i < row; i++)
+	randomize(&i, &j, field);
+	mvmnt(&i, &j, field, gold, score);
+	return 0;
+}
+
+void randomize(int* pRow, int* pCol, int grid[ROW][COL])//Function filling up each box with random numbers on the game grid 
+{
+	int Rows = *pRow;
+	int Columns = *pCol;
+	for (Rows = 1; Rows < 7; Rows++)
 	{
-		for (j = 0; j < col; j++)
+		for (Columns = 1; Columns < 7; Columns++)
 		{
-			field[i][j] = (rand() % 255) + 1;
-			printf("%d\t", field[i][j]); 
+			grid[Rows][Columns] = (rand() % 255) + 1;
+			printf("%d\t", grid[Rows][Columns]);
+			*pRow = Rows;
+			*pCol = Columns;
 		}
 		printf("\n");
 	}
+}
 
-	for (i = 0; i < row; i++)
-	{
-		for (j = 0; j < col; j++)
-		{
-			if (field[i][j] & gold)
+void mvmnt(int* pRow, int* pCol, int grid[ROW][COL], int gold, int score)
+{
+	int Rows = *pRow;
+	int Columns = *pCol;
+	printf("Enter your box postion through \" \": ");
+	scanf_s("%d %d", &Rows, &Columns);
+
+			if (grid[Rows][Columns] & gold)
 			{
-				score += field[i][j] >> 4;
-				printf("%d is gold! \t The score is: %d\t\n", field[i][j], score);
+				score += grid[Rows][Columns] >> 4;
+				printf("Number %d at your position is gold and your score now: %d", grid[Rows][Columns], score);
 			}
 			else
 			{
-				printf("%d is a trap!\t", field[i][j]);
+				printf("Your number %d is a trap!\t", grid[Rows][Columns]);
 			}
-		}
-		printf("\n");
-	}
-	//Checking the bits
-
-	return 0;
 }

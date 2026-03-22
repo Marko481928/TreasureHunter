@@ -1,8 +1,9 @@
-#include<stdio.h>
+﻿#include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
 
 const int ROW = 7, COL = 7;
+
 void randomize(int* pRow, int* pCol, int grid[ROW][COL]);
 void mvmnt(int *pRow, int *pCol, int grid[ROW][COL], int gold, int score);
 
@@ -15,13 +16,15 @@ int main()
 
 	//Each box getting its values
 	randomize(&i, &j, field);
+
 	printf("Enter your box postion through \" \": ");
 	scanf_s("%d %d", &i, &j);
+	
 	mvmnt(&i, &j, field, gold, score);
 	return 0;
 }
 
-void randomize(int* pRow, int* pCol, int grid[ROW][COL])//Function filling up each box with random numbers on the game grid 
+void randomize(int* pRow, int* pCol, int grid[ROW][COL])//Function filling up each box with random value on the game grid 
 {
 	int Rows = *pRow;
 	int Columns = *pCol;
@@ -30,7 +33,6 @@ void randomize(int* pRow, int* pCol, int grid[ROW][COL])//Function filling up ea
 		for (Columns = 1; Columns < 7; Columns++)
 		{
 			grid[Rows][Columns] = (rand() % 255) + 1;
-			printf("%d\t", grid[Rows][Columns]);
 			*pRow = Rows;
 			*pCol = Columns;
 		}
@@ -45,6 +47,8 @@ void mvmnt(int* pRow, int* pCol, int grid[ROW][COL], int gold, int score)
 			if (grid[Rows][Columns] & gold)
 			{
 				score += grid[Rows][Columns] >> 4;
+				/*Ці printf ти маєш одразу перевести на ось це 6х6 поле з літерами G чи T
+				Score розберешся як і де поставити. Я певен ти розумієш про що я.*/
 				printf("Number %d at your position is gold and your score now: %d", grid[Rows][Columns], score);
 			}
 			else

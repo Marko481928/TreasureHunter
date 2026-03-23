@@ -8,7 +8,7 @@ void randomize(int* pRow, int* pCol, int grid[ROW][COL]);
 void mvmnt(int *pRow, int *pCol, int grid[ROW][COL], int gold, int score);
 
 int main()
-{	
+{
 	int gold = 1, i = 1, j = 1;
 	srand((int)time(0));
 	int field[ROW][COL];
@@ -47,8 +47,9 @@ void mvmnt(int* pRow, int* pCol, int grid[ROW][COL], int gold, int score)
 			if (grid[Rows][Columns] & gold)
 			{
 				score += grid[Rows][Columns] >> 4;
-				/*Ці printf ти маєш одразу перевести на ось це 6х6 поле з літерами G чи T
+				/*Ці printf ти маєш одразу перевести на ось це 6х6 поле з точками, які з кожним інпутом замінюються літерами G чи T
 				Score розберешся як і де поставити. Я певен ти розумієш про що я.*/
+				//Або ця функція має під'єднуватись до main чи іншої функції де на початку гри вже є цей grid
 				printf("Number %d at your position is gold and your score now: %d", grid[Rows][Columns], score);
 			}
 			else
